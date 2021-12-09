@@ -21,5 +21,9 @@ while True:
     event, values = window.read()
     if event in ['Exit', sg.WIN_CLOSED]:
         break
+    if event == 'Generate':
+        text = values['-IN-']
+        qr = pyqrcode.create(text)
+        qr.show()
 
 window.close()
