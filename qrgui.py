@@ -25,6 +25,6 @@ while True:
     if event == 'Generate':
         text = values['-IN-']
         qr = pyqrcode.create(text)
-        window['-IMG-'].update(qr.png_as_base64_str(scale=5))
+        window['-IMG-'].update(data=qr.png_as_base64_str(scale=5))
 
 window.close()
