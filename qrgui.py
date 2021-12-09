@@ -12,7 +12,7 @@ import pyqrcode
 layout = [
     [sg.Text('Enter text to be encoded')],
     [sg.InputText(key='-IN-')],
-    [sg.Button('Generate'), sg.Button('Exit')],
+    [sg.Button('Generate'), sg.Button('Save', disabled=True), sg.Button('Exit')],
     [sg.Image(key='-IMG-')]
     ]
 
