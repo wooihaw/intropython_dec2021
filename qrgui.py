@@ -12,7 +12,8 @@ import pyqrcode
 layout = [
     [sg.Text('Enter text to be encoded')],
     [sg.InputText(key='-IN-')],
-    [sg.Button('Generate'), sg.Button('Exit')]
+    [sg.Button('Generate'), sg.Button('Exit')],
+    [sg.Image(key='-IMG-')]
     ]
 
 window = sg.Window('QR Code Generator', layout)
@@ -24,6 +25,6 @@ while True:
     if event == 'Generate':
         text = values['-IN-']
         qr = pyqrcode.create(text)
-        qr.show()
+        window['-IMG-'].update(qr.png_as_base64_str(scale=5))
 
 window.close()
