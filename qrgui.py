@@ -27,5 +27,7 @@ while True:
         qr = pyqrcode.create(text)
         window['-IMG-'].update(data=qr.png_as_base64_str(scale=5))
         window['Save'].update(disabled=False)
+    if event == 'Save':
+        qr.png('qrcode.png', scale=5)
 
 window.close()
