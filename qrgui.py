@@ -26,5 +26,6 @@ while True:
         text = values['-IN-']
         qr = pyqrcode.create(text)
         window['-IMG-'].update(data=qr.png_as_base64_str(scale=5))
+        window['Save'].update(disabled=False)
 
 window.close()
